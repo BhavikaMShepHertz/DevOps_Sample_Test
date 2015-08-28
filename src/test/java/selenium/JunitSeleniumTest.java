@@ -21,10 +21,10 @@ public class JunitSeleniumTest {
     public void myTest() throws Exception {
     	
     	WebDriver driver = new RemoteWebDriver(
-                                new URL("http://107.189.67.151/wd/hub/"), 
+                                new URL("http://23.92.254.243/wd/hub/"), 
                                 DesiredCapabilities.firefox());
         
-        driver.get("http://www.google.com");
+         driver.get("http://107.189.66.225:8080/");
        
         
         // RemoteWebDriver does not implement the TakesScreenshot class
@@ -34,7 +34,7 @@ public class JunitSeleniumTest {
         File screenshot = ((TakesScreenshot)augmentedDriver).
                             getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(screenshot, new File("/home/paasadmin/testimage.png"));
-        Assert.assertEquals(driver.getTitle(), "Google");
+        Assert.assertEquals(driver.getTitle(), "App42 Sample Java-MySql Application");
 		System.out.println("Selenium Test Successfull");
         
     }
